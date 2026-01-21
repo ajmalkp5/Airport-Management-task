@@ -1,0 +1,18 @@
+{% extends "flight_track/base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>Shortest Route</h2>
+
+    <form method="post">
+      {% csrf_token %}
+      Start Airport: <input name="start"><br><br>
+      End Airport: <input name="end"><br><br>
+      <button type="submit">Find</button>
+    </form>
+
+    {% if result %}
+      <p><b>{{ result.airport_code }}</b> – {{ result.duration }} minutes</p>
+    {% endif %}
+</div>
+{% endblock %}

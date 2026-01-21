@@ -1,0 +1,13 @@
+{% extends "flight_track/base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>Longest Route</h2>
+
+    {% if route %}
+      <p><b>{{ route.airport_code }}</b> – {{ route.duration }} minutes</p>
+    {% else %}
+      <p>No data available</p>
+    {% endif %}
+</div>
+{% endblock %}

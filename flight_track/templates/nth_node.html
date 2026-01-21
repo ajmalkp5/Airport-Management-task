@@ -1,0 +1,14 @@
+<form method="post">
+  {% csrf_token %}
+  Airport: <input name="airport_code"><br>
+  Position: <select name="position">
+    <option value="L">Left</option>
+    <option value="R">Right</option>
+  </select><br>
+  N: <input name="n" type="number"><br>
+  <button type="submit">Search</button>
+</form>
+
+{% if result %}
+<p>Result: {{ result }}</p>
+{% endif %}

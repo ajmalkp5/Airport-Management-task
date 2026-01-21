@@ -1,0 +1,17 @@
+{% extends "flight_track/base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>Nth Left / Right Route</h2>
+
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Search</button>
+    </form>
+
+    {% if result %}
+      <p><b>Result:</b> {{ result }}</p>
+    {% endif %}
+</div>
+{% endblock %}
